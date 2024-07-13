@@ -1,4 +1,3 @@
-# sudoku_solver
 import math
 
 class Sudoku_X:
@@ -166,3 +165,5 @@ sudoku_game1.print_board(board1)
 # sudoku_game16.backtracking(board16)
 # sudoku_game16.print_board(board16)
 # print(sudoku_game16.board)
+
+# inspiration taken from Tech With Tim on Youtube
