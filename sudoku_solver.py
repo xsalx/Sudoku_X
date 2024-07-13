@@ -69,11 +69,13 @@ class Sudoku_X:
 
     def backtracking(self, board):
 
-        if float(math.sqrt(len(board[0]))).is_integer == False:
-            return "Board is not compatible with Sudoku Rules."
+        if float(math.sqrt(len(board[0]))).is_integer() == False:
+            print("\nBoard is not compatible with Sudoku Rules.\n")
+            return False
         
         find = self.find_empty_square(board)
         if not find:
+            self.print_board(board)
             return True
         else:
             row, column = find
@@ -90,55 +92,52 @@ class Sudoku_X:
         return False
 
 
-board4 = [
-    [0, 0, 4, 0],
-    [2, 0, 0, 1],
-    [1, 0, 0, 4],
-    [0, 2, 0, 0]
-]
+# Test Cases
 
-sudoku_game4 = Sudoku_X(board4)
-sudoku_game4.backtracking(board4)
-sudoku_game4.print_board(board4)
+# board4 = [
+#     [0, 0, 4, 0],
+#     [2, 0, 0, 1],
+#     [1, 0, 0, 4],
+#     [0, 2, 0, 0]
+# ]
 
-empty_9x9_board = [
-    [0, 0, 1, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0]
-]
+# sudoku_game4 = Sudoku_X(board4)
+# sudoku_game4.backtracking(board4)
 
-sudoku_game9_empty = Sudoku_X(empty_9x9_board)
-sudoku_game9_empty.backtracking(empty_9x9_board)
-sudoku_game9_empty.print_board(empty_9x9_board)
+# empty_9x9_board = [
+#     [0, 0, 1, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0],
+# ]
+
+# sudoku_game9_empty = Sudoku_X(empty_9x9_board)
+# sudoku_game9_empty.backtracking(empty_9x9_board)
 
 
-board9 = [
-    [0,2,0,0,8,0,0,7,0],
-    [4,7,0,0,0,9,0,0,0],
-    [0,0,0,0,0,3,5,2,0],
-    [0,9,2,3,0,0,1,0,0],
-    [0,1,0,0,7,0,0,3,5],
-    [0,0,7,9,0,5,6,0,0],
-    [7,0,4,0,0,0,2,0,6],
-    [0,0,0,6,3,4,0,0,0],
-    [6,0,0,0,9,0,0,5,3]
-]
+# board9 = [
+#     [0,2,0,0,8,0,0,7,0],
+#     [4,7,0,0,0,9,0,0,0],
+#     [0,0,0,0,0,3,5,2,0],
+#     [0,9,2,3,0,0,1,0,0],
+#     [0,1,0,0,7,0,0,3,5],
+#     [0,0,7,9,0,5,6,0,0],
+#     [7,0,4,0,0,0,2,0,6],
+#     [0,0,0,6,3,4,0,0,0],
+#     [6,0,0,0,9,0,0,5,3]
+# ]
 
-sudoku_game9 = Sudoku_X(board9)
-sudoku_game9.backtracking(board9)
-sudoku_game9.print_board(board9)
+# sudoku_game9 = Sudoku_X(board9)
+# sudoku_game9.backtracking(board9)
 
-board1 = [[0]]
+# board1 = [[0]]
 
-sudoku_game1 = Sudoku_X(board1)
-sudoku_game1.backtracking(board1)
-sudoku_game1.print_board(board1)
+# sudoku_game1 = Sudoku_X(board1)
+# sudoku_game1.backtracking(board1)
 
 
 
@@ -163,7 +162,6 @@ sudoku_game1.print_board(board1)
 
 # sudoku_game16 = Sudoku_X(board16)
 # sudoku_game16.backtracking(board16)
-# sudoku_game16.print_board(board16)
 # print(sudoku_game16.board)
 
 # inspiration taken from Tech With Tim on Youtube
